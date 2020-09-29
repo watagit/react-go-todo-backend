@@ -24,6 +24,17 @@ func getTodos(w http.ResponseWriter, r *http.Request) {
   json.NewEncoder(w).Encode(todos)
 }
 
+func addTodo(w http.ResponseWriter, r *http.Request) {
+  var todo Todo
+
+  json.NewDecoder(r.Body).Decode(&todo)
+  fmt.Println("todo: ", todo)
+
+  todos = append(todos, todo)
+
+  json.NewEncoder(w).Encode(todos)
+}
+
 func removeTodo(w http.ResponseWriter, r *http.Request) {
   params := mux.Vars(r)
   fmt.Println("params: ", params)
@@ -51,6 +62,7 @@ func main() {
   )
 
   r.HandleFunc("/api/v1/todos", getTodos).Methods("GET")
+  r.HandleFunc("/api/v1/todos", addTodo).Methods("POST")
   r.HandleFunc("/api/v1/todos/{id}", removeTodo).Methods("DELETE")
 
   log.Fatal(http.ListenAndServe(":8080", r))
