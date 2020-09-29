@@ -5,25 +5,23 @@
 全てのtodo情報を取得する．
 
 ```json
-{
-  "todos": [
-    {
-      "id": 1,
-      "content": "砂糖を買う",
-      "completed": false
-    },
-    {
-      "id": 2,
-      "content": "課題を終わらせる",
-      "completed": false
-    },
-    {
-      "id": 3,
-      "content": "歯医者に行く",
-      "completed": false
-    }
-  ]
-}
+[
+	{
+		"id": 1,
+		"content": "砂糖を買う",
+		"completed": false
+	},
+	{
+		"id": 2,
+		"content": "課題を終わらせる",
+		"completed": false
+	},
+	{
+		"id": 3,
+		"content": "歯医者に行く",
+		"completed": false
+	}
+]
 ```
 
 ##### GET: `/v1/todos/${id}`
@@ -32,11 +30,9 @@
 
 ```json
 {
-  "todo": {
-    "id": 1,
-    "content": "砂糖を買う",
-    "completed": false
-  }
+	"id": 1,
+	"content": "砂糖を買う",
+	"completed": false
 }
 ```
 
@@ -48,11 +44,9 @@ todo情報を送信する．
 
 ```json
 {
-  "todo": {
-    "id": 1,
-    "content": "hoge",
-    "completed": false
-  }
+	"id": 1,
+	"content": "hoge",
+	"completed": false
 }
 ```
 
@@ -64,9 +58,7 @@ todo情報を送信する．
 
 ```json
 {
-  "todo": {
-    "completed": !completed //書き方がよくわからなかった
-  }
+	"completed": !completed //書き方がよくわからなかった
 }
 ```
 
