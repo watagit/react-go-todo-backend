@@ -13,9 +13,9 @@ import (
 )
 
 type Todo struct {
-  ID 				int 		`json:"id"`
-  Content 	string 	`json:"content"`
-  Completed bool 		`json:"completed"`
+  ID        int     `json:"id"`
+  Content   string  `json:"content"`
+  Completed bool    `json:"completed"`
 }
 
 var todos []Todo
